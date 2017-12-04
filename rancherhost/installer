@@ -21,10 +21,6 @@ sudo apt-get -y update
 sudo apt-get -y install docker-engine=17.03.1~ce-0~ubuntu-xenial
 sudo service docker start
 
-#Install Compose
-#sudo curl -L https://github.com/docker/compose/releases/download/1.7.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-#sudo chmod +x /usr/local/bin/docker-compose
-
 #Add user to docker
 sudo usermod -aG docker rtadmin
 
