@@ -21,8 +21,8 @@ sudo apt-get -y install docker-engine
 sudo service docker start
 
 #Install Compose
-sudo curl -L https://github.com/docker/compose/releases/download/1.7.1/docker-co                                        mpose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
+#sudo curl -L https://github.com/docker/compose/releases/download/1.7.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+#sudo chmod +x /usr/local/bin/docker-compose
 
 #update IP Tables
 mkdir /etc/systemd/system/docker.service.d
@@ -37,7 +37,7 @@ systemctl daemon-reload
 sudo usermod -aG docker pqadmin
 
 #Install Webmin
-wget http://prdownloads.sourceforge.net/webadmin/webmin_1.810_all.deb
+wget http://prdownloads.sourceforge.net/webadmin/webmin_1.860_all.deb
 dpkg --install webmin_1.810_all.deb
 sudo apt-get install -y -f
 
@@ -53,18 +53,6 @@ docker network create --subnet=172.18.0.0/24 --gateway=172.18.0.100 --ip-range=1
 #Install Zip
 sudo apt-get install -y zip tree unzip links2 jq
 
-
-
 #install agent
-wget https://github.com/Microsoft/vsts-agent/releases/download/v2.115.0/vsts-agent-ubuntu.16.04-x64-2.115.0.tar.gz
-tar zxvf vsts-agent-ubuntu.16.04-x64-2.115.0.tar.gz
-
-
-#install corebuild / nodebuild  / arangobuild
-
-#cd 
-#docker build -t arangobuild .
-#cd 
-#docker build -t arangobuild .
-#cd 
-#docker build -t arangobuild .
+wget https://github.com/Microsoft/vsts-agent/releases/download/v2.120.2/vsts-agent-ubuntu.16.04-x64-2.120.2.tar.gz
+tar zxvf vsts-agent-ubuntu.16.04-x64-2.120.2.tar.gz
